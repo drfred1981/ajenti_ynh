@@ -1,0 +1,40 @@
+{
+    "name": "Ajenti",
+    "id": "ajenti",
+    "description": {
+        "en": "ajenti",
+        "fr": "ajenti"
+    },
+    "developer": {
+        "name": "",
+        "email": "",
+        "url": "http://www.ajenti.org"
+    },
+    "multi_instance": "false",
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "ask": {
+                    "en": "Choose a domain for Ajenti"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "ask": {
+                    "en": "Choose a path for Ajenti"
+                },
+                "example": "/ajenti",
+                "default": "/ajenti"
+            },
+            {
+                "name": "admin",
+                "ask": {
+                    "en": "Choose the Ajenti administrator (must be an existing YunoHost user)"
+                },
+                "example": "homer"
+            }
+        ]
+    }
+}

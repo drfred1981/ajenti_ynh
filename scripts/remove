@@ -1,0 +1,11 @@
+#!/bin/bash
+
+adminuser=$(sudo yunohost app setting ajenti admin_user)
+
+
+sudo yunohost app service ajenti --remove
+sudo delgroup $adminuser root
+sudo apt-get remove --purge ajenti
+sudo rm -r /etc/apt/sources.list.d/ajenti.list
+sudo rm -f /etc/nginx/conf.d/$domain.d/ajenti.conf
+sudo service nginx reload
