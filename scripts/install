@@ -25,7 +25,8 @@ fi
 
 sudo sh -c "echo 'deb http://repo.ajenti.org/debian main main debian' > /etc/apt/sources.list.d/ajenti.list"
 
-sudo wget http://repo.ajenti.org/debian/key -O- | apt-key add -
+sudo wget http://repo.ajenti.org/debian/key 
+sudo apt-key add key
 
 sudo apt-get update
 sudo apt-get install -y ajenti
@@ -33,7 +34,7 @@ sudo apt-get install -y ajenti
 sudo service ajenti restart
 
 # Add OpenVPN to YunoHost's monitored services
-sudo yunohost service add ajenti --log /var/log/ajenti.log
+sudo yunohost service add ajenti --log /var/log/ajenti/ajenti.log
 
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/ajenti.conf
